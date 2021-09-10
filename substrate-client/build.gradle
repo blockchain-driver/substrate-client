@@ -2,13 +2,13 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
     id 'com.cookpad.android.plugin.license-tools'
     id 'maven-publish'
-    id 'com.peterabeles.gversion'
+    id 'com.peterabeles.gversion'   // https://github.com/lessthanoptimal/gversion-plugin
 }
 
 gversion {
     srcDir       = "src/main/java/"           // path is relative to the sub-project by default
     classPackage = "io.nodle.substratesdk"
-    debug        = false                      // optional. print out extra debug information
+    debug        = true                      // optional. print out extra debug information
     language     = "kotlin"                   // optional. Can be Java, Kotlin, YAML, or Properties. Case insensitive.
 }
 
@@ -17,9 +17,9 @@ afterEvaluate {
         publications {
             libraryJar(MavenPublication) {
                 from components.kotlin
-                groupId = 'com.github.NodleCode'
+                groupId = 'com.github.blockchain-driver'
                 artifactId = 'substrate-client'
-                version = '0.1'
+                version = '0.1.1'
             }
         }
     }
