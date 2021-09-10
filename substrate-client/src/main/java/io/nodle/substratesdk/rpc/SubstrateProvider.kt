@@ -19,9 +19,9 @@ import java.nio.ByteBuffer
 class SubstrateProvider(vararg substrateRpcUrl: String) {
     val rpc = SubstrateRpc(substrateRpcUrl)
 
-    var genesisHash: String? = null
-    var metadata: RuntimeMetadata? = null
-    var runtimeVersion: JSONObject? = null
+    @JvmField var genesisHash: String? = null
+    @JvmField var metadata: RuntimeMetadata? = null
+    @JvmField var runtimeVersion: JSONObject? = null
 
     fun getGenesisHash(): Single<String> {
         if (genesisHash != null)
